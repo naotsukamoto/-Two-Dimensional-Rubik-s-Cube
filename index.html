@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link href="css/style.css" rel="stylesheet">
+</head>
+<body onload="colorSet()">
+	<center>
+  <h1><span id="color-theme"></span>色に揃えよ</h1>
+	<p>色をクリックすると、四方の色が変わります。</p>
+	<p>赤⇒青、青⇒黄色、黄色⇒緑、緑⇒橙色、橙色⇒赤となります。</p>
+  <div>
+  <table>
+    <tr>
+      <td id="color0" onclick="tap(0)"></td>
+      <td id="color1" onclick="tap(1)"></td>
+      <td id="color2" onclick="tap(2)"></td>
+      <td id="color3" onclick="tap(3)"></td>
+      <td id="color4" onclick="tap(4)"></td>
+      <td id="color5" onclick="tap(5)"></td>
+    </tr>
+    <tr>
+      <td id="color6" onclick="tap(6)"></td>
+      <td id="color7" onclick="tap(7)"></td>
+      <td id="color8" onclick="tap(8)"></td>
+      <td id="color9" onclick="tap(9)"></td>
+      <td id="color10" onclick="tap(10)"></td>
+      <td id="color11" onclick="tap(11)"></td>
+    </tr>
+    <tr>
+      <td id="color12" onclick="tap(12)"></td>
+      <td id="color13" onclick="tap(13)"></td>
+      <td id="color14" onclick="tap(14)"></td>
+      <td id="color15" onclick="tap(15)"></td>
+      <td id="color16" onclick="tap(16)"></td>
+      <td id="color17" onclick="tap(17)"></td>
+    </tr>
+    <tr>
+      <td id="color18" onclick="tap(18)"></td>
+      <td id="color19" onclick="tap(19)"></td>
+      <td id="color20" onclick="tap(20)"></td>
+      <td id="color21" onclick="tap(21)"></td>
+      <td id="color22" onclick="tap(22)"></td>
+      <td id="color23" onclick="tap(23)"></td>
+    </tr>
+    <tr>
+      <td id="color24" onclick="tap(24)"></td>
+      <td id="color25" onclick="tap(25)"></td>
+      <td id="color26" onclick="tap(26)"></td>
+      <td id="color27" onclick="tap(27)"></td>
+      <td id="color28" onclick="tap(28)"></td>
+      <td id="color29" onclick="tap(29)"></td>
+    </tr>
+    <tr>
+      <td id="color30" onclick="tap(30)"></td>
+      <td id="color31" onclick="tap(31)"></td>
+      <td id="color32" onclick="tap(32)"></td>
+      <td id="color33" onclick="tap(33)"></td>
+      <td id="color34" onclick="tap(34)"></td>
+      <td id="color35" onclick="tap(35)"></td>
+    </tr>
+  </table>
+	<script type="text/javascript" src="js/main.js"></script>
+	</center>
+
+  <!-- color-box at right-->
+  <div class="color-box">
+    <div class="color-box-row">
+      <span class="change-from color-red"></span>
+      <span class="key">→</span>
+      <span class="change-to color-blue"></span>
+    </div>
+    <div class="color-box-row">
+      <span class="change-from color-blue"></span>
+      <span class="key">→</span>
+      <span class="change-to color-yellow"></span>
+    </div>
+    <div class="color-box-row">
+      <span class="change-from color-yellow"></span>
+      <span class="key">→</span>
+      <span class="change-to color-green"></span>
+    </div>
+    <div class="color-box-row">
+      <span class="change-from color-green"></span>
+      <span class="key">→</span>
+      <span class="change-to color-orange"></span>
+    </div>
+    <div class="color-box-row">
+      <span class="change-from color-orange"></span>
+      <span class="key">→</span>
+      <span class="change-to color-red"></span>
+    </div>
+  </div>
+
+  <!-- tapCount-box at left -->
+  <div class="count-box">
+    <span class="count-msg">残り<span id="tapCount">10</span>回</span>
+  </div>
+
+  <!-- Ranking box at left -->
+  <div class="rank-box">
+    <div class="rank-msg">TOP 3</div>
+    <div class="rank-1">1. <span id="1-name">Aさん</span> </div>
+    <div class="rank-2">2. <span id="2-name">Bさん</span> </div>
+    <div class="rank-3">3. <span id="3-name">Cさん</span> </div>
+  </div>
+
+  <p>&copy; All Right Reserved S.Y and N.Tsukamoto</p>
+</body>
+</html>
