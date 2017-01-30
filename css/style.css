@@ -111,4 +111,19 @@ td {
 	margin:20px;
 }
 
+.footer{
+	margin-top:20px;
+	text-align:center;
+	bottom:0px;
+	height:30px;
+	width:100%;
+	background:#00ff00;
+	line-height:30px;
+	opacity:0.3;
+}
+
+.copyRight{
+
+}
+
 
