@@ -5,6 +5,15 @@ var rand = 0;
 var randTheme;
 var masuCount=0;
 var tapCount=10;
+var score_1th;
+var score_2th;
+var score_3th;
+
+function start(){
+
+
+}
+
 
 function colorSet() {
   // 色をランダムにセットする
@@ -18,6 +27,17 @@ function colorSet() {
   var ct=document.getElementById("color-theme")
   ct.textContent=colorsName[randTheme];
   ct.style.color=colors[randTheme];
+
+  // 値をとってくる
+  score_1th=localStorage.getItem('score-1')=="undefined"||null?0:localStorage.getItem('score-1');
+  score_2th=localStorage.getItem('score-2')=="undefined"||null?0:localStorage.getItem('score-2');
+  score_3th=localStorage.getItem('score-3')=="undefined"||null?0:localStorage.getItem('score-3');
+
+  // localstorageのデータを表示する
+  document.getElementById("1th").textContent=score_1th;
+  document.getElementById("2th").textContent=score_2th;
+  document.getElementById("3th").textContent=score_3th;
+
 }
 
 function tap(presentNum) {
@@ -137,6 +157,7 @@ function tap(presentNum) {
     check();
     // tapCountを元に戻す
     tapCount=10;
+    document.getElementById('tapCount').textContent=tapCount;
   }
 
   // masuCountを元に戻す
@@ -153,11 +174,44 @@ function check(){
       masuCount++;
     }
   }
-  alert(masuCount+'個'+colorsName[randTheme]+'にできました！');
-  console.log(randTheme);
+  alert('Fin!'+ masuCount + '点!');
+  document.getElementById('score').textContent=masuCount;
+
+  store();
+
+
 }
 
+function store(){
+ 
+  // 比較
+  if (masuCount>score_1th){
+    // 1位以上のスコアを取った場合
+    score_3th=score_2th;
+    score_2th=score_1th;
+    score_1th=masuCount;
+    alert("1");
+  }else if(masuCount>=score_2th){
+    score_3th=score_2th;
+    score_2th=masuCount;
+    alert("2");
 
+  }else if(masuCount>=score_3th){
+    score_3th=masuCount;
+      alert("3");
+  }
+
+  // htmlに表示
+  document.getElementById("1th").textContent=score_1th;
+  document.getElementById("2th").textContent=score_2th;
+  document.getElementById("3th").textContent=score_3th;
+
+  // 入れ直す
+  localStorage.setItem('score-1', score_1th);
+  localStorage.setItem('score-2', score_2th);
+  localStorage.setItem('score-3', score_3th);
+
+}
 
 
 
